@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montagem da Missão Compartilhada - Unearthed</title>
+  <!-- Font Awesome para ícone do Instagram -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --pink: #ff4fa0;
+      --purple: #7a4ef6;
+      --blue: #3db8ff;
+      --dark: #0b0712;
+      --glass: rgba(255, 255, 255, 0.07);
+      --radius: 18px;
+      --shadow: 0 8px 30px rgba(10, 8, 25, 0.5);
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0c1a2c, #1e1c24 70%);
+
+      color: #665e6b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: #ddd;
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .steps {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+      border-radius: var(--radius);
+      padding: 40px 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .steps h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+      color: var(--blue);
+    }
+
+    .btn-center {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-center a {
+      display: inline-block;
+      width: 90%;
+      max-width: 600px;
+      padding: 24px 0;
+      border-radius: 18px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      background-color: var(--blue);
+      color: #0a0212;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-center a:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--pink);
+    }
+
+    .card .meta {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes glowPink {
+      0%, 100% {
+        background-color: var(--pink);
+        box-shadow: 0 0 8px var(--pink);
+      }
+      50% {
+        background-color: #ff73c3;
+        box-shadow: 0 0 16px #ff73c3;
+      }
+    }
+
+    @keyframes glowPurple {
+      0%, 100% {
+        background-color: var(--purple);
+        box-shadow: 0 0 8px var(--purple);
+      }
+      50% {
+        background-color: #9b6fff;
+        box-shadow: 0 0 16px #9b6fff;
+      }
+    }
+
+    @keyframes glowBlue {
+      0%, 100% {
+        background-color: var(--blue);
+        box-shadow: 0 0 8px var(--blue);
+      }
+      50% {
+        background-color: #6fcfff;
+        box-shadow: 0 0 16px #6fcfff;
+      }
+    }
+
+    .btn-row .btn:nth-child(3n+1) {
+      animation: glowPink 2s infinite;
+    }
+
+    .btn-row .btn:nth-child(3n+2) {
+      animation: glowPurple 2s infinite;
+    }
+
+    .btn-row .btn:nth-child(3n+3) {
+      animation: glowBlue 2s infinite;
+      color: #0a0212;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: center;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-images {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo {
+      height: 200px;
+      width: auto;
+    }
+
+    .footer-logo.unearthed {
+      filter: drop-shadow(0 0 1px #000);
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Montagem do Suporte para a Missão Compartilhada - Unearthed</h1>
+    <p>Montagem LEGO Spike Prime</p>
+  </header>
+
+  <main class="container">
+    <section class="steps">
+      <h2>Passo a Passo da Montagem</h2>
+      <div class="btn-center">
+        <a href="https://drive.google.com/file/d/1csJ_eYqqnNFNTVhhmCRd8pXGgcnO3prp/view" target="_blank" rel="noopener noreferrer">
+           Suporte da Missão Compartilhada (PDF)
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Recursos Rápidos</h3>
+      <p class="meta">Navegação para diferentes áreas do nosso trabalho</p>
+      <div class="btn-row">
+        <a href="#" class="btn">Robô (Em Construção)</a>
+        <a href="#" class="btn">Projeto de Inovação (Em Construção)</a>
+        <a href="https://brasilescola.uol.com.br/geografia/o-que-e-arqueologia.htm" class="btn" target="_blank" rel="noopener noreferrer">Arqueologia</a>
+        <a href="https://www.firstlegoleague.com.br/" class="btn" target="_blank" rel="noopener noreferrer">First LEGO League</a>
+        <a href="https://static.portaldaindustria.com.br/media/filer_public/46/fa/46fa33aa-7870-4737-b6f5-fd705a55a57a/bags_8_9_e_10.pdf" class="btn" target="_blank" rel="noopener noreferrer">Missão Compartilhada (PDF)</a>
+        <a href="https://www.instagram.com/challengers.crz/" class="btn" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-images">
+      <img src="https://i.ibb.co/MyRhggPf/challengers-png.png" alt="Logo equipe" width="150" />
+      <img src="https://i.ibb.co/MD2vKJhZ/unearthed-png.png" alt="Logo unearthed" class="footer-logo unearthed" width="175" />
+    </div>
+    <div class="footer-content">
+      <p>Equipe Challengers – Temporada Unearthed 2025</p>
+    </div>
+  </footer>
+</body>
+
+</html>
